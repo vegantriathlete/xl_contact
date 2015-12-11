@@ -12,7 +12,7 @@
 /*
  * Implements hook_form_FORM_ID_alter().
  */
-function beginner_contact_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+function xl_contact_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['contact_information'] = array(
     /*
      * It's not necessary to declare this type
