@@ -1,0 +1,4 @@
+name = Beginner Module
+description = Add some text to the contact form
+dependencies[] = contact 
+core = 7.x

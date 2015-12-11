@@ -1,0 +1,42 @@
+<?php
+
+/*
+ * This is just to provide an example of writing a really simple
+ * custom module. In reality, you would probably have either
+ * manually created a block that you placed in the Over Content
+ * region of the theme or you would have used the
+ * Webform (http://drupal.org/project/webform) module to create
+ * a custom contact page.
+ */
+
+/*
+ * Implements hook_form_FORM_ID_alter().
+ */
+function beginner_contact_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $form['contact_information'] = array(
+    /*
+     * It's not necessary to declare this type
+     * It's the default type
+     */
+    '#type' => 'markup',
+    /*
+     * This drops HTML markup onto the page
+     */
+    '#markup' => '<div>Xeric Landscapes<br />
+                       123 Cactus Way<br />
+                       Phoenix, AZ 85001<br />
+                       (602) 123 - 4567
+                 </div>',
+    /*
+     * This places the field at the top of the form
+     * since it will have a "lower" weight than the
+     * the rest of the elements on the page.
+     * If you displayed the contents of the form
+     * drupal_set_message('<pre>' . print_r($form, TRUE) . '</pre>');
+     * you would see that the other elements do not have a weight set,
+     * which means they would appear on the page in whatever order
+     * they appear in the $form array.
+     */
+    '#weight' => -20,
+  );
+}
