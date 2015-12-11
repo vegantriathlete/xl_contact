@@ -1,4 +1,4 @@
-name = Xeric Landscapes Contanct
+name = Xeric Landscapes Contact
 description = Add some text to the contact form
 dependencies[] = contact 
 core = 7.x
